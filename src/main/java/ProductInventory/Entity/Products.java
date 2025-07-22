@@ -1,7 +1,11 @@
 package ProductInventory.Entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -9,6 +13,7 @@ import jakarta.persistence.Table;
 public class Products {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	
@@ -16,6 +21,16 @@ public class Products {
 	private int quantity;
 	
 	private String manufacturer;
+	@OneToOne(cascade = CascadeType.ALL)
+	private ProductDetails productDe ;
+	
+	public ProductDetails getProductDe() {
+		return productDe;
+	}
+
+	public void setProductDe(ProductDetails productDe) {
+		this.productDe = productDe;
+	}
 
 	public int getId() {
 		return id;
@@ -60,7 +75,7 @@ public class Products {
 	@Override
 	public String toString() {
 		return "Products [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity
-				+ ", manufacturer=" + manufacturer + "]";
+				+ ", manufacturer=" + manufacturer + ", productDe=" + productDe + "]";
 	}
 	
 	
