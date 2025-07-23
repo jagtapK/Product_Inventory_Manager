@@ -18,11 +18,10 @@ public class Details {
 		
 		ProductDetails pd = new ProductDetails();
 		pd.setStock(10);
-		//pd.setId(101);
 		
 		
 		Products p = new Products();
-		//p.setId(201);
+		
 		p.setName("coco cola");
 		p.setPrice(25);
 		p.setManufacturer("ABC");
@@ -31,7 +30,7 @@ public class Details {
 		pd.setProduct(p);
 		
 		session.persist(p);
-		//session.persist(pd);
+		
 		transaction.commit();
 		session.close();
 		
