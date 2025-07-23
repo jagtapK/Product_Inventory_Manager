@@ -9,10 +9,13 @@ import jakarta.persistence.OneToOne;
 @Entity
 public class ProductDetails {
     
+	//One to Many Bidirectional Mapping 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private int Stock;
+	
 	@OneToOne(mappedBy = "productDe")
 	private Products product;
 	
@@ -34,6 +37,10 @@ public class ProductDetails {
 	}
 	public void setStock(int stock) {
 		Stock = stock;
+	}
+	@Override
+	public String toString() {
+		return "ProductDetails [id=" + id + ", Stock=" + Stock + ", product=" + product + "]";
 	}
 	
 	

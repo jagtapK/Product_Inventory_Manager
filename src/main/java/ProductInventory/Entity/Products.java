@@ -12,8 +12,10 @@ import jakarta.persistence.Table;
 @Table(name = "products")
 public class Products {
 
+	//One to Many Bidirectional Mapping 
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String name;
 	

@@ -9,7 +9,7 @@ public class App
         System.out.println("Product Inventory Manager! ");
         
         System.out.println("Choose an option:" + "\n1.Add New Product" + "\n2.Search By product name"
-			+ "\n3.Delete Product By ID" + "\n4.Update Quantity"+ "\n5. Exit");
+			+ "\n3.Delete Product By ID" + "\n4.Update Quantity"+ "\n5.Details" + "\n6.Exit");
     
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your Choice");
@@ -40,6 +40,10 @@ public class App
         	break;
         	
         case 5:
+        	Details d = new Details();
+        	d.details();
+    	
+        case 6:
         	System.out.println("Exiting program. Goodbye!");
     		System.exit(0); // Terminates the program immediately
     		break;
